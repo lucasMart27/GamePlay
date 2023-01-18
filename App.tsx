@@ -1,6 +1,6 @@
 import React from "react";
 import { StatusBar } from "react-native";
-import { SignIn } from "./src/screens/SignIn";
+import { Home } from "./src/screens/Home";
 import { useFonts } from "expo-font";
 import { Inter_400Regular, Inter_500Medium } from "@expo-google-fonts/inter";
 import { Background } from "./src/components/Background";
@@ -32,7 +32,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      <SignIn />
+      <Home />
     </Background>
   );
 }
