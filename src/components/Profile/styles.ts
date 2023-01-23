@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
   },
   username: {
     fontFamily: theme.fonts.title700,
-    fontSize: 24,
+    fontSize: 27,
     color: theme.colors.heading,
   },
   message: {
