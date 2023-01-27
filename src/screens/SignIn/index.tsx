@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import { View, Text, Image } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import { ButtonIncon } from "../../components/Buttonicon";
 import IllustrationImg from "../../assets/illustration.png";
 import { styles } from "./styles";
 
 export function SignIn() {
+  const navigation = useNavigation();
+
+  function habdleSignIn() {
+    navigation.navigate("Home");
+  }
+
   return (
     <View style={styles.container}>
       <Image
@@ -24,7 +31,11 @@ export function SignIn() {
           Crie grupos para jogar seus games {"\n"}
           favoritos com seus amigos
         </Text>
-        <ButtonIncon title="Entrar com Discord" activeOpacity={0.7} />
+        <ButtonIncon
+          title="Entrar com Discord"
+          activeOpacity={0.7}
+          onPress={habdleSignIn}
+        />
       </View>
     </View>
   );
