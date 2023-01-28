@@ -31,11 +31,7 @@ export function SignIn() {
           Crie grupos para jogar seus games {"\n"}
           favoritos com seus amigos
         </Text>
-        <ButtonIncon
-          title="Entrar com Discord"
-          activeOpacity={0.7}
-          onPress={habdleSignIn}
-        />
+        <ButtonIncon title="Entrar com Discord" onPress={habdleSignIn} />
       </View>
     </View>
   );

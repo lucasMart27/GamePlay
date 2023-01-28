@@ -3,6 +3,7 @@ import { StatusBar } from "react-native";
 import { Routes } from "./src/routes";
 import { useFonts } from "expo-font";
 import { Inter_400Regular, Inter_500Medium } from "@expo-google-fonts/inter";
+import { Background } from "./src/components/Background";
 
 import {
   Rajdhani_500Medium,
@@ -25,13 +26,13 @@ export default function App() {
   }
 
   return (
-    <>
+    <Background>
       <StatusBar
-        barStyle={"light-content"}
+        barStyle="light-content"
         backgroundColor="transparent"
         translucent
       />
       <Routes />
-    </>
+    </Background>
   );
 }
