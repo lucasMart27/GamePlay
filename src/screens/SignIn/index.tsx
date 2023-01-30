@@ -9,7 +9,7 @@ import { styles } from "./styles";
 export function SignIn() {
   const navigation = useNavigation();
 
-  function habdleSignIn() {
+  function handleSignIn() {
     navigation.navigate("Home");
   }
 
@@ -31,7 +31,7 @@ export function SignIn() {
           Crie grupos para jogar seus games {"\n"}
           favoritos com seus amigos
         </Text>
-        <ButtonIncon title="Entrar com Discord" onPress={habdleSignIn} />
+        <ButtonIncon title="Entrar com Discord" onPress={handleSignIn} />
       </View>
     </View>
   );
