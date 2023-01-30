@@ -12,8 +12,8 @@ export function AuthRoutes() {
       headerMode="none"
       screenOptions={{
         cardStyle: {
-          backgroundColor: "transparent",
-        },
+          backgroundColor: "transparent"
+        }
       }}
     >
       <Screen name="SignIn" component={SignIn} />
