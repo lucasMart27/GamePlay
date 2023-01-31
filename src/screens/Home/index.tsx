@@ -1,5 +1,7 @@
 import React from "react";
 import { View } from "react-native";
+
+import { CategorySelect } from "../../components/CategorySelect";
 import { ButtonAdd } from "../../components/ButtonAdd";
 import { Profile } from "../../components/Profile";
 
@@ -11,6 +13,10 @@ export function Home() {
       <View style={styles.header}>
         <Profile />
         <ButtonAdd />
+      </View>
+
+      <View>
+        <CategorySelect />
       </View>
     </View>
   );
