@@ -4,8 +4,13 @@ import { RectButton, RectButtonProperties } from "react-native-gesture-handler";
 
 import { styles } from "./styles";
 import { categories } from "../../utils/categories";
+import { Category } from "../Category";
 
-export function CategorySelect() {
+type Props = {
+  categorySelect: string;
+};
+
+export function CategorySelect({ categorySelect }: Props) {
   return;
   <ScrollView
     horizontal
@@ -14,7 +19,12 @@ export function CategorySelect() {
     contentContainerStyle={{ paddingRight: 40 }}
   >
     {categories.map((category) => (
-      <Category />
+      <Category
+        key={category.id}
+        title={category.title}
+        icon={category.icon}
+        checked={category.id === categorySelect}
+      />
     ))}
   </ScrollView>;
 }
