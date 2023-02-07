@@ -14,12 +14,13 @@ export const styles = StyleSheet.create({
     width: 100,
     height: 116,
     backgroundColor: theme.colors.secondary40,
+    borderRadius: 8,
     justifyContent: "space-between",
     alignItems: "center",
     paddingVertical: 7
   },
   title: {
-    fontFamily: theme.fonts.text500,
+    fontFamily: theme.fonts.title500,
     color: theme.colors.heading,
     fontSize: 15
   },
@@ -30,12 +31,12 @@ export const styles = StyleSheet.create({
     alignSelf: "flex-end",
     marginRight: 7,
     borderColor: theme.colors.secondary50,
-    borderEndWidth: 2,
+    borderWidth: 2,
     borderRadius: 3
   },
   checked: {
-    width: 12,
-    height: 12,
+    width: 10,
+    height: 10,
     backgroundColor: theme.colors.primary,
     alignSelf: "flex-end",
     marginRight: 7,

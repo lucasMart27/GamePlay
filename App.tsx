@@ -5,13 +5,11 @@ import {
   Rajdhani_500Medium,
   Rajdhani_700Bold
 } from "@expo-google-fonts/rajdhani";
-import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
+import { useFonts } from "expo-font";
+
 import { Routes } from "./src/routes";
-
 import { Background } from "./src/components/Background";
-
-//("expo-app-loading");
 
 export default function App() {
   const [fontsLoaded] = useFonts({
