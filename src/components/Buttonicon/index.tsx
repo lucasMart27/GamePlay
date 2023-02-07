@@ -1,15 +1,15 @@
 import React from "react";
-import { RectButton, RectButtonProperties } from "react-native-gesture-handler";
 import { Text, Image, View } from "react-native";
+import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 
 import DiscordImg from "../../assets/discord.png";
 import { styles } from "./styles";
 
-type Props = RectButtonProperties & {
+type Props = RectButtonProps & {
   title: string;
 };
 
-export function ButtonIncon({ title, ...rest }: Props) {
+export function ButtonIcon({ title, ...rest }: Props) {
   return (
     <RectButton style={styles.container} {...rest}>
       <View style={styles.iconWrapper}>

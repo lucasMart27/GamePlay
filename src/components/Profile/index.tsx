@@ -1,8 +1,8 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { styles } from "./styles";
 
 import { Avatar } from "../Avatar";
+import { styles } from "./styles";
 
 export function Profile() {
   return (
@@ -15,7 +15,8 @@ export function Profile() {
 
           <Text style={styles.username}>Lucas</Text>
         </View>
-        <Text style={styles.message}>Hoje é dia vitória</Text>
+
+        <Text style={styles.message}>Hoje é dia de vitória</Text>
       </View>
     </View>
   );
