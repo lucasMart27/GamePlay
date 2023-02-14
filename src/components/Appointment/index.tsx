@@ -4,6 +4,7 @@ import { View, Text } from "react-native";
 
 import { GuildIcon } from "../GuildIcon";
 import { styles } from "./styles";
+import PlayserSvg from "../../assets/player.svg";
 
 export type GuildProps = {};
 
@@ -20,6 +21,7 @@ type Props = RectButtonProps & {
 };
 
 export function Appointment({ data, ...rest }: Props) {
+  const [category] = categories.filter((item) => item.id === data.category);
   return (
     <RectButton {...rest}>
       <View style={styles.container}>
@@ -27,7 +29,7 @@ export function Appointment({ data, ...rest }: Props) {
         <View style={styles.content}>
           <View style={styles.header}>
             <Text stile={styles.title}>{data.guild.name}</Text>
-            <Text style={styles.category}></Text>
+            <Text style={styles.category}>{category.title}</Text>
           </View>
         </View>
       </View>
