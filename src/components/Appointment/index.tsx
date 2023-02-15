@@ -6,7 +6,9 @@ import { GuildIcon } from "../GuildIcon";
 import { styles } from "./styles";
 import PlayserSvg from "../../assets/player.svg";
 
-export type GuildProps = {};
+export type GuildProps = {
+  owner: true;
+};
 
 export type AppointmentProps = {
   id: string;
@@ -22,14 +24,20 @@ type Props = RectButtonProps & {
 
 export function Appointment({ data, ...rest }: Props) {
   const [category] = categories.filter((item) => item.id === data.category);
+  const { owner } = data.guild;
+  const { primary, on } = theme.colors;
+
   return (
     <RectButton {...rest}>
       <View style={styles.container}>
         <GuildIcon />
         <View style={styles.content}>
           <View style={styles.header}>
-            <Text stile={styles.title}>{data.guild.name}</Text>
+            <Text style={styles.title}>{data.guild.name}</Text>
             <Text style={styles.category}>{category.title}</Text>
+          </View>
+          <View style={styles.playersInfo}>
+            <PlayserSvg fill={owner ? primary : on} />
           </View>
         </View>
       </View>
