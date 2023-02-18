@@ -50,6 +50,8 @@ export function Home() {
             data={appointments}
             keyExtractor={(item) => item.id}
             renderItem={({ item }) => <Appointment data={item} />}
+            styles={styles.matches}
+            showsVerticalScrollIndicator={false}
           />
         </View>
       </View>
