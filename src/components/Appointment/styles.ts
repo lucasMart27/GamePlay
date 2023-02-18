@@ -46,7 +46,7 @@ export const styles = StyleSheet.create({
     fontSize: 13,
     marginLeft: 7
   },
-  players: {
+  player: {
     fontFamily: theme.fonts.text500,
     fontSize: 13,
     marginLeft: 7,
