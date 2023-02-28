@@ -26,6 +26,19 @@ export function Home() {
       date: "11/06 ás 20:40h",
       description:
         "É hoje que vamos chegar ao challenger sem perder uma partida da md10"
+    },
+    {
+      id: "1",
+      guild: {
+        id: "1",
+        name: "Lendários",
+        icon: null,
+        owner: true
+      },
+      category: "1",
+      date: "11/06 ás 20:40h",
+      description:
+        "É hoje que vamos chegar ao challenger sem perder uma partida da md10"
     }
   ];
 
@@ -40,22 +53,20 @@ export function Home() {
         <ButtonAdd />
       </View>
 
-      <View>
-        <CategorySelect
-          categorySelect={category}
-          setCategory={handleCategorySelect}
+      <CategorySelect
+        categorySelect={category}
+        setCategory={handleCategorySelect}
+      />
+      <View style={styles.content}>
+        <ListHeader title="Partidas agendadas" subtitle="Total 6" />
+        <FlatList
+          data={appointments}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => <Appointment data={item} />}
+          ItemSeparatorComponent={() => <ListDivider />}
+          style={styles.matches}
+          showsVerticalScrollIndicator={false}
         />
-        <View style={styles.content}>
-          <ListHeader title="Partidas agendadas" subtitle="Total 6" />
-          <FlatList
-            data={appointments}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => <Appointment data={item} />}
-            ItemSeparatorComponent={() => <ListDivider />}
-            style={styles.matches}
-            showsVerticalScrollIndicator={false}
-          />
-        </View>
       </View>
     </View>
   );
