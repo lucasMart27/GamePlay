@@ -3,8 +3,8 @@ import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 import { View, Text } from "react-native";
 
 import { styles } from "./styles";
-import PlayserSvg from "../../assets/player.svg";
-import Calendar from "../../assets/calendar.svg";
+import PlayerSvg from "../../assets/player.svg";
+import CalendarSvg from "../../assets/calendar.svg";
 
 import { GuildIcon } from "../GuildIcon";
 import { categories } from "../../utils/categories";
@@ -42,17 +42,20 @@ export function Appointment({ data, ...rest }: Props) {
         <View style={styles.content}>
           <View style={styles.header}>
             <Text style={styles.title}>{data.guild.name}</Text>
+
             <Text style={styles.category}>{category.title}</Text>
           </View>
 
           <View style={styles.footer}>
             <View style={styles.dateInfo}>
-              <Calendar />
+              <CalendarSvg />
+
               <Text style={styles.date}>{data.date}</Text>
             </View>
 
             <View style={styles.playersInfo}>
-              <PlayserSvg fill={owner ? primary : on} />
+              <PlayerSvg fill={owner ? primary : on} />
+
               <Text style={[styles.player, { color: owner ? primary : on }]}>
                 {owner ? "Anfitrião" : "Visitante"}
               </Text>
