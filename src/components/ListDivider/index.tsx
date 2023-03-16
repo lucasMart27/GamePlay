@@ -1,26 +1,19 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 
 import { styles } from "./styles";
 
 type Props = {
-  isCentered?: boolean;
+  title: string;
+  subtitle: string;
 };
 
-export function ListDivider({ isCentered }: Props) {
+export function ListHeader({ title, subtitle }: Props) {
   return (
-    <View
-      style={[
-        styles.container,
-        isCentered
-          ? {
-              marginVertical: 12
-            }
-          : {
-              marginTop: 2,
-              marginBottom: 31
-            }
-      ]}
-    />
+    <View style={styles.container}>
+      <Text style={styles.title}>{title}</Text>
+
+      <Text style={styles.subtitle}>{subtitle}</Text>
+    </View>
   );
 }
