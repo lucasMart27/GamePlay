@@ -2,16 +2,32 @@ import React from "react";
 import { BorderlessButton } from "react-native-gesture-handler";
 import { Fontisto } from "@expo/vector-icons";
 
-import { ImageBackground, Text, View } from "react-native";
+import { ImageBackground, Text, View, FlatList } from "react-native";
 
 import { theme } from "../../global/styles/theme";
 import { styles } from "./styles";
 import BannerImg from "../../assets/banner.png";
 
 import { Background } from "../../components/Background";
+import { ListHeader } from "../../components/ListHeader";
 import { Header } from "../../components/Header";
+import { Member } from "../../components/Member";
 
 export function AppointmentDetails() {
+  const members = [
+    {
+      id: "1",
+      username: "Jose",
+      avatar_url: "https://github.com/HenriqueMart.png",
+      status: "Online",
+    },
+    {
+      id: "2",
+      username: "Henrique",
+      avatar_url: "https://github.com/HenriqueMart.png",
+      status: "offline",
+    },
+  ];
   return (
     <Background>
       <Header
@@ -31,6 +47,13 @@ export function AppointmentDetails() {
           </Text>
         </View>
       </ImageBackground>
+      <ListHeader title="Jogadores" subtitle="Total 3" />
+
+      <FlatList
+        data={members}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <Member data={item} />}
+      />
     </Background>
   );
 }
