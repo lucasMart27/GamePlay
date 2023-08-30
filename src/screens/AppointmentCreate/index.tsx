@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { RectButton } from "react-native-gesture-handler";
+
 import { BorderlessButton } from "react-native-gesture-handler";
 import { Fontisto } from "@expo/vector-icons";
 
@@ -23,6 +25,13 @@ export function AppointmentCreate() {
         setCategory={setCategory}
         categorySelected={category}
       />
+      <View style={styles.form}>
+        <RectButton>
+          <View style={styles.select}>
+            <View />
+          </View>
+        </RectButton>
+      </View>
     </Background>
   );
 }
