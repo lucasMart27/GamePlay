@@ -34,6 +34,7 @@ export function AppointmentCreate() {
             <View style={styles.selectBody}>
               <Text style={styles.label}>Selecione um servidor</Text>
             </View>
+            <Feather />
           </View>
         </RectButton>
       </View>
