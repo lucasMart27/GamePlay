@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Feather } from "@expo/vector-icons";
 import { RectButton } from "react-native-gesture-handler";
 
 import { BorderlessButton } from "react-native-gesture-handler";
@@ -28,7 +29,11 @@ export function AppointmentCreate() {
       <View style={styles.form}>
         <RectButton>
           <View style={styles.select}>
-            <View />
+            <View style={styles.image} />
+
+            <View style={styles.selectBody}>
+              <Text style={styles.label}>Selecione um servidor</Text>
+            </View>
           </View>
         </RectButton>
       </View>
