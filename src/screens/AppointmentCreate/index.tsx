@@ -21,7 +21,12 @@ export function AppointmentCreate() {
     <Background>
       <Header title="Agendar partida" />
 
-      <Text style={[styles.label, { marginLeft: 24, marginTop: 36 }]}>
+      <Text
+        style={[
+          styles.label,
+          { marginLeft: 24, marginTop: 36, marginBottom: 18 },
+        ]}
+      >
         Categoria
       </Text>
       <CategorySelect
