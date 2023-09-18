@@ -15,6 +15,7 @@ import { Background } from "../../components/Background";
 import { Header } from "../../components/Header";
 import { GuildIcon } from "../../components/GuildIcon";
 import { SmallInput } from "../../components/SmallInput";
+import { TextArea } from "../../components/TextArea";
 
 export function AppointmentCreate() {
   const [category, setCategory] = useState("");
@@ -52,11 +53,24 @@ export function AppointmentCreate() {
         <View style={styles.field}>
           <View>
             <Text style={styles.label}>Dia e mês</Text>
+            <View style={styles.column}>
+              <SmallInput maxLength={2} />
+              <Text style={styles.divider}>/</Text>
+
+              <SmallInput maxLength={2} />
+            </View>
           </View>
-          <View style={styles.column}>
-            <SmallInput maxLength={2} />
+          <View>
+            <Text style={styles.label}>Hora e minuto</Text>
+            <View style={styles.column}>
+              <SmallInput maxLength={2} />
+              <Text style={styles.divider}>:</Text>
+
+              <SmallInput maxLength={2} />
+            </View>
           </View>
         </View>
+        <TextArea />
       </View>
     </Background>
   );
