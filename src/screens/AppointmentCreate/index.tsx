@@ -14,6 +14,7 @@ import { CategorySelect } from "../../components/CategorySelect";
 import { Background } from "../../components/Background";
 import { Header } from "../../components/Header";
 import { GuildIcon } from "../../components/GuildIcon";
+import { SmallInput } from "../../components/SmallInput";
 
 export function AppointmentCreate() {
   const [category, setCategory] = useState("");
@@ -37,10 +38,7 @@ export function AppointmentCreate() {
       <View style={styles.form}>
         <RectButton>
           <View style={styles.select}>
-            {
-              //<View style={styles.image} /> 0:58:31 <---------------------------------------
-              <GuildIcon />
-            }
+            {<GuildIcon />}
             <View style={styles.selectBody}>
               <Text style={styles.label}>Selecione um servidor</Text>
             </View>
@@ -51,6 +49,14 @@ export function AppointmentCreate() {
             />
           </View>
         </RectButton>
+        <View style={styles.field}>
+          <View>
+            <Text style={styles.label}>Dia e mês</Text>
+          </View>
+          <View style={styles.column}>
+            <SmallInput maxLength={2} />
+          </View>
+        </View>
       </View>
     </Background>
   );
