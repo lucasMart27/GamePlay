@@ -37,7 +37,7 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
   },
   field: {
-    width: "100",
+    width: "100%",
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: 30,
@@ -51,5 +51,14 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     fontFamily: theme.fonts.text500,
     color: theme.colors.highlight,
+  },
+  caracteresLimit: {
+    fontFamily: theme.fonts.text400,
+    fontSize: 13,
+    color: theme.colors.heading,
+  },
+  footer: {
+    marginVertical: 20,
+    marginBottom: 56,
   },
 });
