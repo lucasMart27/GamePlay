@@ -16,7 +16,7 @@ export type GuildProps = {
   id: string;
   name: string;
   icon: string | null;
-  owrn: boolean;
+  owner: boolean;
 };
 
 type Props = TouchableOpacityProps & {
@@ -31,7 +31,7 @@ export function Guild({ data, ...rest }: Props) {
         <View>
           <Text style={styles.title}>{data.name}</Text>
           <Text style={styles.type}>
-            {data.owrn ? "Administrador" : "Convidado"}
+            {data.owner ? "Administrador" : "Convidado"}
           </Text>
         </View>
       </View>
