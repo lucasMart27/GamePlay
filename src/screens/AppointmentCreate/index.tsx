@@ -23,6 +23,8 @@ import { GuildIcon } from "../../components/GuildIcon";
 import { SmallInput } from "../../components/SmallInput";
 import { TextArea } from "../../components/TextArea";
 import { Button } from "../../components/Button";
+import { ModalView } from "../../components/ModalView";
+import { Guilds } from "../Guilds";
 
 export function AppointmentCreate() {
   const [category, setCategory] = useState("");
@@ -99,6 +101,9 @@ export function AppointmentCreate() {
           </View>
         </Background>
       </ScrollView>
+      <ModalView>
+        <Guilds />
+      </ModalView>
     </KeyboardAvoidingView>
   );
 }
