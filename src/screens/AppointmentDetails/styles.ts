@@ -1,7 +1,6 @@
 import { theme } from "./../../global/styles/theme";
 import { StyleSheet } from "react-native";
 
-
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -9,7 +8,6 @@ export const styles = StyleSheet.create({
   banner: {
     width: "100%",
     height: 234,
-
   },
   bannerContent: {
     flex: 1,
@@ -28,5 +26,4 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.title500,
     color: theme.colors.heading,
   },
-
 });
