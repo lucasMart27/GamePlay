@@ -2,13 +2,6 @@ import React from "react";
 import { BorderlessButton } from "react-native-gesture-handler";
 import { Fontisto } from "@expo/vector-icons";
 
-import { ImageBackground, Text, View, FlatList } from "react-native";
-
-import { theme } from "../../global/styles/theme";
-import { styles } from "./styles";
-import BannerImg from "../../assets/banner.png";
-
-import { ListDivider } from "../../components/ListDivider";
 import { Background } from "../../components/Background";
 import { ListHeader } from "../../components/ListHeader";
 import { ButtonIcon } from "../../components/ButtonIcon";
@@ -49,18 +42,7 @@ export function AppointmentDetails() {
           </Text>
         </View>
       </ImageBackground>
-      <ListHeader title="Jogadores" subtitle="Total 3" />
 
-      <FlatList
-        data={members}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <Member data={item} />}
-        ItemSeparatorComponent={() => <ListDivider />}
-        style={styles.members}
-      />
-      <View style={styles.footer}>
-        <ButtonIcon title="Entrar na partida" />
-      </View>
     </Background>
   );
 }
