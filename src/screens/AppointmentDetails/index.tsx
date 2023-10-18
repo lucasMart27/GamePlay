@@ -42,7 +42,6 @@ export function AppointmentDetails() {
           </Text>
         </View>
       </ImageBackground>
-
     </Background>
   );
 }
