@@ -20,24 +20,6 @@ export function Guilds({ handleGuildSelect }: Props) {
       icon: "image.png",
       owner: true,
     },
-    {
-      id: "2",
-      name: "Galera do Game",
-      icon: "image.png",
-      owner: true,
-    },
-    {
-      id: "3",
-      name: "Galera do Game",
-      icon: "image.png",
-      owner: true,
-    },
-    {
-      id: "4",
-      name: "Galera do Game",
-      icon: "image.png",
-      owner: true,
-    },
   ];
   return (
     <View style={styles.container}>
