@@ -20,7 +20,14 @@ type AuthProviderProps = {
 export const AuthContext = createContext({} as AuthContextData);
 
 function AuthProvider({ children }: AuthProviderProps) {
-  const [user, setUser] = useState<User>({} as User);
+  const [user, setUser] = useState<User>({
+    id: "string",
+    username: "string",
+    firstName: "string",
+    avatar: "string",
+    email: "string",
+    token: "string",
+  } as User);
   return (
     <AuthContext.Provider
       value={{
@@ -31,3 +38,10 @@ function AuthProvider({ children }: AuthProviderProps) {
     </AuthContext.Provider>
   );
 }
+
+function useAuth() {
+  const context = useContext(AuthContext);
+  return context;
+}
+
+export { AuthProvider, useAuth };
