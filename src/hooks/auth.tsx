@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
+import * as AuthSession from "expo-auth-session";
 
 type User = {
   id: string;
@@ -20,14 +21,7 @@ type AuthProviderProps = {
 export const AuthContext = createContext({} as AuthContextData);
 
 function AuthProvider({ children }: AuthProviderProps) {
-  const [user, setUser] = useState<User>({
-    id: "string",
-    username: "string",
-    firstName: "string",
-    avatar: "string",
-    email: "string",
-    token: "string",
-  } as User);
+  const [user, setUser] = useState<User>({} as User);
   return (
     <AuthContext.Provider
       value={{
