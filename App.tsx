@@ -8,7 +8,7 @@ import {
 import AppLoading from "expo-app-loading";
 import { useFonts } from "expo-font";
 
-import { AuthContext } from "./src/context/auth";
+import { AuthProvider } from "./src/hooks/auth";
 
 import { Routes } from "./src/routes";
 import { Background } from "./src/components/Background";
@@ -32,15 +32,9 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      <AuthContext.Provider
-        value={{
-          name: "Lucas",
-          email: "lucas@email.com",
-          avatar: "lucas.pnj",
-        }}
-      >
+      <AuthProvider>
         <Routes />
-      </AuthContext.Provider>
+      </AuthProvider>
     </Background>
   );
 }
