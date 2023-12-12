@@ -1,5 +1,13 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
 import * as AuthSession from "expo-auth-session";
+import {
+  SCOPE,
+  CLIENT_ID,
+  CDN_IMAGE,
+  REDIRECT_URI,
+  RESPONSE_TYPE,
+} from "../configs";
+import { api } from "../services/api";
 
 type User = {
   id: string;
@@ -12,6 +20,7 @@ type User = {
 
 type AuthContextData = {
   user: User;
+  signIn: () => Promise<void>;
 };
 
 type AuthProviderProps = {
@@ -24,11 +33,11 @@ function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<User>({} as User);
   const [loading, setLoading] = useState(false);
 
-  function SignIn() {
+  async function signIn() {
     try {
       setLoading(true);
-      const authUrl =
-        "https://discord.com/api/oauth2/authorize?client_id=1182149210376777738&response_type=code&redirect_uri=https%3A%2F%2Fauth.expo.io%2Fgameplay&scope=identify+email+connections+guilds";
+      const authUrl = `${api.defaults.baseURL}/oauth2/authorize?client_id=${CLIENT_ID}&response_type=${RESPONSE_TYPE}&redirect_uri=${REDIRECT_URI}&scope=${SCOPE}`;
+      console.log(authUrl);
 
       AuthSession.startAsync({ authUrl });
     } catch (error) {}
@@ -38,6 +47,7 @@ function AuthProvider({ children }: AuthProviderProps) {
     <AuthContext.Provider
       value={{
         user,
+        signIn,
       }}
     >
       {children}
