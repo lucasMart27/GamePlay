@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import { View, Text, Image } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import React from "react";
+import { View, Text, Image, Alert } from "react-native";
+//import { useNavigation } from "@react-navigation/native";
 
-import { AuthContext } from "../../context/auth";
+import { useAuth } from "../../hooks/auth";
 
 import IllustrationImg from "../../assets/illustration.png";
 import { styles } from "./styles";
@@ -11,13 +11,17 @@ import { ButtonIcon } from "../../components/ButtonIcon";
 import { Background } from "../../components/Background";
 
 export function SignIn() {
-  const navigation = useNavigation();
+  //const navigation = useNavigation();
 
-  const context = useContext(AuthContext);
-  console.log(context);
+  const { user, signIn } = useAuth();
 
-  function handleSignIn() {
-    navigation.navigate("Home");
+  async function handleSignIn() {
+    //navigation.navigate("Home");
+    try {
+      await signIn();
+    } catch (error) {
+      Alert.alert(error);
+    }
   }
 
   return (
