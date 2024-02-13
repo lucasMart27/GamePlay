@@ -17,7 +17,11 @@ export function SignIn() {
     try {
       await signIn();
     } catch (error) {
-      Alert.alert(error);
+      if (typeof error === "string") {
+        Alert.alert(error);
+      } else {
+        // Trate o erro de outra forma, já que não é uma string
+      }
     }
   }
 
