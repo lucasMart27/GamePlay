@@ -16,13 +16,15 @@ export const theme = {
     highlight: "#ABB1CC",
     heading: "#DDE3F0",
     line: "#991F36",
-    on: "#32BD50"
+    on: "#32BD50",
+
+    discord: "#7289da",
   },
 
   fonts: {
     title700: "Rajdhani_700Bold",
     title500: "Rajdhani_500Medium",
     text400: "Inter_400Regular",
-    text500: "Inter_500Medium"
-  }
+    text500: "Inter_500Medium",
+  },
 };
