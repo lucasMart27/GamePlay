@@ -71,7 +71,7 @@ export function AppointmentCreate() {
             <RectButton onPress={hanldleOpenGuilds}>
               <View style={styles.select}>
                 {guild.icon ? (
-                  <GuildIcon />
+                  <GuildIcon guildId={guild.id} iconId={guild.icon} />
                 ) : (
                   <View style={styles.image}></View>
                 )}
