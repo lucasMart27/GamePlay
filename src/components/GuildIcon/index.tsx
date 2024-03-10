@@ -14,8 +14,6 @@ type Props = {
 export function GuildIcon({ guildId, iconId }: Props) {
   const uri = `${CDN_IMAGE}/icons/${guildId}/${iconId}.png`;
 
-  // "https://gamerssuffice.com/wp-content/uploads/2019/11/How-to-add-bots-to-discord-500x405.jpg";
-
   return (
     <View style={styles.container}>
       {iconId ? (
