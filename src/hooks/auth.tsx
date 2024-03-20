@@ -48,10 +48,17 @@ export const AuthContext = createContext({} as AuthContextData);
 function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<User>({} as User);
   const [loading, setLoading] = useState(false);
+  const [authenticating, setAuthenticating] = useState(false); // Variável de estado para rastrear a autenticação em andamento
 
   async function signIn() {
     try {
-      setLoading(true);
+      // Verifica se não há autenticação em andamento
+      if (authenticating) {
+        return; // Retorna sem fazer nada se a autenticação já estiver em andamento
+      }
+
+      setAuthenticating(true); // Define a autenticação como iniciada
+
       const authUrl = `${api.defaults.baseURL}/oauth2/authorize?client_id=${CLIENT_ID}&response_type=${RESPONSE_TYPE}&redirect_uri=${REDIRECT_URI}&scope=${SCOPE}`;
 
       const { type, params } = (await AuthSession.startAsync({
@@ -59,6 +66,7 @@ function AuthProvider({ children }: AuthProviderProps) {
       })) as AuthorizationResponse;
 
       if (type === "success" && !params.error) {
+        // Se a autenticação for bem-sucedida
         api.defaults.headers.authorization = `Bearer ${params.access_token}`;
         const userInfo = await api.get("/users/@me");
 
@@ -76,8 +84,9 @@ function AuthProvider({ children }: AuthProviderProps) {
         setUser(userData);
       }
     } catch {
-      throw new Error("Não foi possivel autenticar");
+      throw new Error("Não foi possível autenticar");
     } finally {
+      setAuthenticating(false); // Define a autenticação como concluída
       setLoading(false);
     }
   }
@@ -93,6 +102,7 @@ function AuthProvider({ children }: AuthProviderProps) {
   useEffect(() => {
     loadUserStorageData();
   }, []);
+
   return (
     <AuthContext.Provider
       value={{
